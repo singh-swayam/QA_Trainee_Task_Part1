@@ -125,7 +125,99 @@ All credentials are managed in `Day-1/test-data/users.ts`.
 
 ---
 
-## Day 2 — Coming Soon
+## 📅 Day 2 — Functional Automation + Assertions + Debugging
+
+### ✅ Tasks Completed
+
+- Product and cart automation (TC_005 – TC_009)
+- Checkout validation automation (TC_010 – TC_012)
+- `products.ts` typed test data file created
+- Debugging note submitted with trace analysis
+
+---
+
+### ⚙️ Setup — Day 2
+
+```bash
+cd Day-2
+npm install
+npx playwright install
+```
+
+---
+
+### ▶️ Running Tests — Day 2
+
+**Run all tests**
+```bash
+npx playwright test
+```
+
+**Run a specific spec file**
+```bash
+npx playwright test tests/products.spec.ts
+npx playwright test tests/checkout.spec.ts
+```
+
+**Run by tag**
+```bash
+npx playwright test --grep @smoke
+npx playwright test --grep @negative
+npx playwright test --grep @regression
+```
+
+**Run in headed mode**
+```bash
+npx playwright test --headed
+```
+
+**View HTML report**
+```bash
+npx playwright show-report
+```
+
+---
+
+### 🗂️ Test Cases Automated — Day 2
+
+| TC ID | Test Name | File | Type | Status |
+|---|---|---|---|---|
+| TC_001 | Login page should load | login.spec.ts | Smoke | ✅ Pass |
+| TC_002 | Valid user should be able to login | login.spec.ts | Smoke | ✅ Pass |
+| TC_003 | Invalid password should show error | login.spec.ts | Negative | ✅ Pass |
+| TC_004 | Locked user should not be able to login | login.spec.ts | Negative | ✅ Pass |
+| TC_005 | Product list should be visible after login | products.spec.ts | Smoke | ✅ Pass |
+| TC_006 | Add one product to cart | products.spec.ts | Regression | ✅ Pass |
+| TC_007 | Remove product from cart | products.spec.ts | Regression | ✅ Pass |
+| TC_008 | Add multiple products to cart | products.spec.ts | Regression | ✅ Pass |
+| TC_009 | Cart page should show selected products | products.spec.ts | Regression | ✅ Pass |
+| TC_010 | Checkout with valid details | checkout.spec.ts | Regression | ✅ Pass |
+| TC_011 | Checkout with missing first name | checkout.spec.ts | Negative | ✅ Pass |
+| TC_012 | Checkout with missing postal code | checkout.spec.ts | Negative | ✅ Pass |
+
+---
+
+### 🧾 Test Data — Day 2
+
+**Users** → `Day-2/test-data/users.ts`
+**Products** → `Day-2/test-data/products.ts`
+
+| Product Name | Price |
+|---|---|
+| Sauce Labs Backpack | $29.99 |
+| Sauce Labs Bike Light | $9.99 |
+| Sauce Labs Bolt T-Shirt | $15.99 |
+
+---
+
+### 🐛 Debugging Notes
+
+Full debugging notes in `Day-2/debugging-note.md`.
+
+| # | Failed Test | Root Cause | Fix |
+|---|---|---|---|
+| Bug 1 | TC_009 – Cart page shows selected products | `getByText()` matched both the product name div and description div — strict mode violation | Scoped to `[data-test="inventory-item-name"]` with `{ hasText }` |
+| Bug 2 | TC_008 – Add multiple products to cart | `getByRole('button', { name: 'Add to cart' })` matched all cart buttons on page | Scoped button inside `.inventory_item.filter({ hasText: product.name })` |
 
 ---
 
