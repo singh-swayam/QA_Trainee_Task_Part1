@@ -20,17 +20,51 @@ Structured QA training repository.
 ```
 QA_Trainee_Task/
 ├── Day-1/
-│   ├── test-results/
-│   ├── output screenshots/
 │   ├── test-data/
-│   │   └── users.ts
+│   │   └── user.ts
 │   ├── tests/
 │   │   └── login.spec.ts
-│   │   └── example.spec.ts
-│   ├── Manual Test cases for SauceDemo.xlsx
+│   ├── output screenshots/
+│   ├── test-results/
+│   ├── Manual Test scenarios for SauceDemo.xlsx
 │   ├── playwright.config.ts
-│   └── package.json
-│   ├── package-lock.json
+│   ├── package.json
+│   └── package-lock.json
+├── Day-2/
+│   ├── test-data/
+│   │   ├── user.ts
+│   │   └── products.ts
+│   ├── tests/
+│   │   ├── login.spec.ts
+│   │   ├── products.spec.ts
+│   │   └── checkout.spec.ts
+│   ├── output screenshots/
+│   ├── test-results/
+│   ├── debugging-note.md
+│   ├── playwright.config.ts
+│   ├── package.json
+│   └── package-lock.json
+├── Day-3/
+│   ├── pages/
+│   │   ├── LoginPage.ts
+│   │   ├── ProductsPage.ts
+│   │   ├── CartPage.ts
+│   │   └── CheckoutPage.ts
+│   ├── tests/
+│   │   ├── login.spec.ts
+│   │   ├── products.spec.ts
+│   │   ├── cart.spec.ts
+│   │   └── checkout.spec.ts
+│   ├── test-data/
+│   │   ├── user.ts
+│   │   └── products.ts
+│   ├── utils/
+│   │   └── testHelpers.ts
+│   ├── output screenshots/
+│   ├── self-review-note.md
+│   ├── playwright.config.ts
+│   ├── package.json
+│   └── package-lock.json
 └── README.md
 ```
 
