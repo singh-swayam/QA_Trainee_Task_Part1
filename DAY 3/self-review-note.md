@@ -9,7 +9,7 @@ This 3-day training task helped me build a complete automation framework from sc
 ## What I Did Well
 
 **Test Independence**
-Every test starts from scratch — login is called fresh in each test through the `loginAsStandardUser()` helper. No test depends on the state left by a previous one.
+Every test starts from scratch, login is called fresh in each test through the `loginAsStandardUser()` helper. No test depends on the state left by a previous one.
 
 **Stable Locators**
 I used `data-test` attributes throughout, combined with `.filter({ hasText })` to scope locators to specific product cards. I avoided fragile selectors like `div:nth-child(2) > button`.
@@ -21,15 +21,15 @@ I used `data-test` attributes throughout, combined with `.filter({ hasText })` t
 - Never used `any` anywhere
 
 **Page Object Model**
-All 4 pages are cleanly separated — `LoginPage`, `ProductsPage`, `CartPage`, `CheckoutPage`. Test files import and use these classes, with no raw locators in spec files.
+All 4 pages are cleanly separated, `LoginPage`, `ProductsPage`, `CartPage`, `CheckoutPage`. Test files import and use these classes, with no raw locators in spec files.
 
 **No Hard-Coded Waits**
 `page.waitForTimeout()` is not used anywhere. Playwright's built-in auto-waiting handles all synchronization.
 
 **Debugging**
 Identified and fixed 2 real bugs during Day 2:
-1. `getByText()` strict mode violation — fixed by scoping to `[data-test="inventory-item-name"]`
-2. Button locator matching all cart buttons — fixed by chaining inside `.inventory_item.filter()`
+1. `getByText()` strict mode violation, fixed by scoping to `[data-test="inventory-item-name"]`
+2. Button locator matching all cart buttons, fixed by chaining inside `.inventory_item.filter()`
 
 ---
 
@@ -63,7 +63,7 @@ I would move the base URL and credentials out of the code entirely and into a `.
 
 ## Key Learnings
 
-- POM makes tests significantly easier to read and maintain — when a locator changes, it changes in one place only
+- POM makes tests significantly easier to read and maintain, when a locator changes, it changes in one place only
 - TypeScript's `readonly` on locators prevents accidental reassignment inside methods
-- Playwright's strict mode is a feature, not a bug — it forces you to write precise locators
+- Playwright's strict mode is a feature, not a bug, it forces you to write precise locators
 - Debugging with the trace viewer is far more effective than adding console logs
