@@ -1,4 +1,4 @@
-# Self Review Note — Swayam Singh
+# Self Review Note - Swayam Singh
 
 ## Overall Reflection
 
