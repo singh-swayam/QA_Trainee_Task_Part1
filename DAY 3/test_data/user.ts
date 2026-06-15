@@ -4,13 +4,19 @@ export interface UserCredentials {
     username: string;
     password: string;
     type: UserType;
+    firstName?: string;
+    lastName?: string;
+    postalCode?: string;
 }
 
 export const users: UserCredentials[] = [
     {
         username: 'standard_user',
         password: 'secret_sauce',
-        type: 'standard'
+        type: 'standard',
+        firstName: 'Swayam',
+        lastName: 'Singh',
+        postalCode: '400078'
     },
     {
         username: 'locked_out_user',
@@ -37,4 +43,6 @@ export const users: UserCredentials[] = [
         password: 'secret_sauce',
         type: 'visual'
     }
-]
+];
+
+export const STANDARD_USER = users[0];
