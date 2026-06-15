@@ -21,18 +21,15 @@ export class CheckoutPage {
     this.confirmationHeader = page.locator('[data-test="complete-header"]');
   }
 
-  async fillCheckoutDetails(firstName: string, lastName: string, postalCode: string): Promise<void> {
+  async submitCheckoutForm(firstName: string, lastName: string, postalCode: string): Promise<void> {
     await this.firstNameInput.fill(firstName);
     await this.lastNameInput.fill(lastName);
     await this.postalCodeInput.fill(postalCode);
-  }
-
-  async continueCheckout(): Promise<void> {
     await this.continueButton.click();
   }
 
   async verifyValidationMessage(expectedMessage: string): Promise<void> {
-    await expect(this.errorMessage).toContainText(expectedMessage);
+    await expect(this.errorMessage).toHaveText(expectedMessage);
   }
 
   async finishOrder(): Promise<void> {
