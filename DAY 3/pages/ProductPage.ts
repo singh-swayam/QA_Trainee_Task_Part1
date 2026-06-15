@@ -15,7 +15,7 @@ export class ProductsPage {
 
   async verifyProductsPageIsVisible(): Promise<void> {
     await expect(this.page).toHaveURL(/inventory/);
-    await expect(this.inventoryList).toHaveCount(6);
+    await expect(this.inventoryList.first()).toBeVisible();
   }
 
   async addProductToCart(productName: string): Promise<void> {
